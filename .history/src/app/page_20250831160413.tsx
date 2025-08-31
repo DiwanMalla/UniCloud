@@ -226,21 +226,10 @@ export default function Home() {
 
               <div className="space-y-3">
                 <a
-                  href="https://diwanmalla.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 rounded-lg transition-all transform hover:scale-105 shadow-lg"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 9.74s9-4.19 9-9.74V7l-10-5z"/>
-                  </svg>
-                  View Portfolio
-                </a>
-                <a
                   href="https://github.com/DiwanMalla"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-gray-800 transition-all transform hover:scale-105 shadow-lg"
+                  className="flex items-center justify-center w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition-colors"
                 >
                   <svg
                     className="w-5 h-5 mr-2"
@@ -255,7 +244,7 @@ export default function Home() {
                   href="https://github.com/DiwanMalla/UniCloud"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg"
+                  className="flex items-center justify-center w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   <svg
                     className="w-5 h-5 mr-2"

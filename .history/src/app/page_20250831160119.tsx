@@ -34,30 +34,30 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      {/* Developer Button - Fixed Position */}
+      <button
+        onClick={() => setShowDeveloperModal(true)}
+        className="fixed top-4 right-90 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg transition-colors flex items-center gap-2 z-10"
+        title="Developer Info"
+      >
+        <Shield className="w-4 h-4" />
+        Dev
+      </button>
+
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
-              <Cloud className="h-8 w-8 text-blue-600 mr-3" />
-              <h1 className="text-2xl font-bold text-gray-900">UniCloud</h1>
+              <Shield className="h-8 w-8 text-blue-600 mr-3" />
+              <h1 className="text-2xl font-bold text-gray-900">SecureUni</h1>
             </div>
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setShowDeveloperModal(true)}
-                className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all transform hover:scale-105 shadow-lg"
-                title="Developer Info"
-              >
-                <Shield className="w-4 h-4" />
-                Developer
-              </button>
-              <button
-                onClick={() => router.push("/auth/signin")}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium"
-              >
-                Sign In
-              </button>
-            </div>
+            <button
+              onClick={() => router.push("/auth/signin")}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium"
+            >
+              Sign In
+            </button>
           </div>
         </div>
       </header>
@@ -204,43 +204,28 @@ export default function Home() {
                   for university students. Features AES-256 encryption,
                   subject-based organization, and beautiful UI.
                 </p>
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  <div className="bg-white rounded p-3 border border-gray-200">
-                    <div className="font-semibold text-gray-900">Framework:</div>
-                    <div className="text-blue-600 font-medium">Next.js 15</div>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div className="bg-white rounded p-2">
+                    <strong>Framework:</strong> Next.js 15
                   </div>
-                  <div className="bg-white rounded p-3 border border-gray-200">
-                    <div className="font-semibold text-gray-900">Database:</div>
-                    <div className="text-green-600 font-medium">Supabase</div>
+                  <div className="bg-white rounded p-2">
+                    <strong>Database:</strong> Supabase
                   </div>
-                  <div className="bg-white rounded p-3 border border-gray-200">
-                    <div className="font-semibold text-gray-900">Auth:</div>
-                    <div className="text-purple-600 font-medium">GitHub OAuth</div>
+                  <div className="bg-white rounded p-2">
+                    <strong>Auth:</strong> GitHub OAuth
                   </div>
-                  <div className="bg-white rounded p-3 border border-gray-200">
-                    <div className="font-semibold text-gray-900">Encryption:</div>
-                    <div className="text-red-600 font-medium">AES-256</div>
+                  <div className="bg-white rounded p-2">
+                    <strong>Encryption:</strong> AES-256
                   </div>
                 </div>
               </div>
 
               <div className="space-y-3">
                 <a
-                  href="https://diwanmalla.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 rounded-lg transition-all transform hover:scale-105 shadow-lg"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 9.74s9-4.19 9-9.74V7l-10-5z"/>
-                  </svg>
-                  View Portfolio
-                </a>
-                <a
                   href="https://github.com/DiwanMalla"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-gray-800 transition-all transform hover:scale-105 shadow-lg"
+                  className="flex items-center justify-center w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition-colors"
                 >
                   <svg
                     className="w-5 h-5 mr-2"
@@ -255,7 +240,7 @@ export default function Home() {
                   href="https://github.com/DiwanMalla/UniCloud"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg"
+                  className="flex items-center justify-center w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   <svg
                     className="w-5 h-5 mr-2"
