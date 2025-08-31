@@ -1,7 +1,29 @@
 import GithubProvider from "next-auth/providers/github";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const authOptions: any = {
+interface SessionParams {
+  session: {
+    user?: {
+      id?: string;
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+    };
+  };
+  token: {
+    sub?: string;
+  };
+}
+
+interface JWTParams {
+  token: {
+    sub?: string;
+  };
+  user?: {
+    id?: string;
+  };
+}
+
+export const authOptions = {
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID!,
@@ -9,15 +31,13 @@ export const authOptions: any = {
     }),
   ],
   callbacks: {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    async session({ session, token }: any) {
+    async session({ session, token }: SessionParams) {
       if (session.user && token.sub) {
         session.user.id = token.sub;
       }
       return session;
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    async jwt({ token, user }: any) {
+    async jwt({ token, user }: JWTParams) {
       if (user) {
         token.sub = user.id;
       }
@@ -28,6 +48,6 @@ export const authOptions: any = {
     signIn: "/auth/signin",
   },
   session: {
-    strategy: "jwt",
+    strategy: "jwt" as const,
   },
 };
